@@ -1,0 +1,174 @@
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+    background-color: #2c323b;
+    color: rgb(255, 255, 255);
+    line-height: normal;
+}
+
+.bg-purp{
+    background-color: rgb(144, 98, 218);
+    /* background-color: rgb(195, 67, 97); */
+    
+    color: white;
+}
+.bg-medium{
+    background-color: rgb(92, 95, 102);
+    /* background-color: rgb(195, 67, 97); */
+    
+    color: white;
+}
+.bg-cancel{
+    /* background-color: rgb(92, 95, 102); */
+    background-color: rgb(195, 67, 97);
+    
+    /* background-color: rgb(134, 48, 48); */
+    color: white;
+}
+
+.bg-input{
+    background-color: rgb(46, 48, 53);
+    color: white;
+    border: 1px solid #333;
+}
+.dropdown.bg-input{
+    border: 1px solid rgb(73, 73, 73);
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+}
+.text-purp{
+    color: rgb(144, 98, 218);
+    /* color: rgb(195, 67, 97); */
+    /* color: rgb(86, 97, 201); */
+    /* color: rgb(152, 25, 202); */
+}
+
+/* Padding */
+.padding{
+    padding: 0 4rem;
+    /* box-sizing: border-box; */
+
+}
+p{
+    margin-bottom: 0;
+}
+
+card{
+    width: 100%;
+}
+
+/* Navbar */
+
+a.navbar-brand > img {
+    max-width: 100%;
+    max-height: 100%;
+    height: 30px;
+    /* object-fit: cover; */
+    /* background-size: contain; */
+}
+
+a.nav-item{
+    color: white;
+}
+
+/* Cards */
+div.col.card{
+    padding: 0;
+    /* box-sizing: border-box; */
+    /* margin: 0  */
+}
+
+.row.d-flex{
+    justify-content: space-evenly;
+}
+
+.time {
+    background-color: rgb(54, 54, 54);
+    /* background-color: rgba(0, 0, 0, 0.158); */
+    /* max-width: 30%; */
+    border-radius: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: clip;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* font-size: 100%; */
+}
+
+
+
+/* Lists */
+ul {
+    list-style-type: none;
+    /* margin: 0;
+    padding: 0; */
+}
+.list-item{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    border-bottom: 2px solid rgba(183, 0, 255, 0.384);
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.list-item:hover{
+    background-color: rgb(144, 98, 218);
+    border: none;
+    padding: 11px;
+    transition: background-color 300ms;
+
+}
+
+li.list-item{
+    line-height: 1rem;
+}
+
+
+/* @media (max-width: 358px){
+    .col.time>small{
+        font-size: xx-small;
+        line-height: 0;
+    }
+} */
+
+/* RAINBOW */
+.progress-bar{
+    user-select: none;
+    font-size: 100px;
+    color: white;
+    background: repeating-linear-gradient(45deg, rgba(144,98,218,1) 0%, rgba(116,13,210,1) 25%, rgba(144,98,218,1) 50%, rgba(116,13,210,1) 75%, rgba(144,98,218,1) 100%);
+    /* background: repeating-linear-gradient(-45deg, red 0%, yellow 7.14%, rgb(0,255,0) 14.28%,
+                rgb(0,255,255) 21.4%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%); */
+    background-size: 600vw 600vw;
+    -webkit-text-fill-color: transparent;
+    animation: slide 3s linear infinite forwards;
+  }
+
+  @keyframes slide {
+    0%{
+      background-position-x: 0%;
+    }
+    100%{
+      background-position-x: 600vw;
+    }
+  }
+
+ 
+  button.list-group-item{
+      width: 100%;
+  }
+
+  .done{
+    text-decoration: line-through;
+    background-color: rgb(70, 76, 165);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    transition: margin-left 500ms ease-in;
+}

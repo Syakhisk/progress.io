@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>progress.io</title>
+  </head>
+  <body>
+    
+    <!-- ------ -->
+    <!-- NAVBAR -->
+    <!-- ------ -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark px-0 mx-0">
+      <div class="container-fluid padding px-5">
+        <a href="" class="navbar-brand">
+          <img class="d-inline-block align-top" src="img/logo-white.png" alt="">
+          progress.io
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav" style="">
+          <a class="nav-item nav-link" id="btn-taskMgr" data-toggle="modal" data-target="#mdl-taskMgr">task-manager</a>
+          <a class="nav-item nav-link" id="btn-load">load-project</a>
+          <a class="nav-item nav-link" data-toggle="modal" data-target="#mdl-createProject">create-project</a>
+        </div>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- ----- -->
+    <!-- CARDS -->
+    <!-- ----- -->
+    <div class="container-fluid padding">
+      <div class="row mt-3">
+        <!-- select -->
+        <div class="col-sm">
+          <div class="row">
+          <div class="col">
+            <div class="card bg-medium">
+              <h6 class="card-header bg-dark">selected-project</h6>
+              <div class="card-body">
+                <h5 class="label-selected-project">none</h5>
+                <p>
+                  <span class="label-progress"></span>
+                  <span class="label-percentage"></span>
+                </p>
+              </div>
+            </div>
+          </div>
+          </div>
+          
+          <div class="row mt-3">
+          <div class="col">
+            <div class="card bg-medium">
+              <h6 class="card-header bg-dark">navs</h6>
+              <div class="card-body" >
+                <button class="btn btn-success shadow-none" id="btn-taskMgr" data-toggle="modal" data-target="#mdl-taskMgr">task-manager</button>
+                <button class="btn btn-info shadow-none btn-check" id=>load-project</button>
+                <button class="btn bg-purp btn-createProject shadow-none" data-toggle="modal" data-target="#mdl-createProject">create-project</button>
+        
+              </div>
+            </div>
+          </div>
+          </div>
+
+        </div>
+        
+        <!-- time -->
+        <div class="col-sm">
+        <div class="card bg-medium">
+          <h6 class="card-header bg-dark">project-time</h6>
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <p class="font-weight-normal font-italic">time-started</p>
+                <p class="font-weight-bold">12.30 PM</p>
+              </div>
+              <div class="col">
+                <p class="font-weight-normal font-italic">deadline</p>
+                <p class="font-weight-bold ">April 12th, 
+                <span class="font-weight-normal">05:42 PM</span>
+                </p>
+              </div>
+            </div>
+            <hr class="my-2">
+            <div class="row" style="margin: auto;">
+              <div class="col-lg-7">
+                <p class="font-weight-normal font-italic mb-2">time-spent</p>
+                <div class="row d-flex">
+                  <div class="col px-1 px-md-2">
+                  <div class="time">
+                    <h4 class="mb-0" id="spent-hr">69</h4>
+                    <small>hours</small>
+                  </div>
+                  </div>
+                  <div class="col px-1 px-md-2">
+                  <div class="time">
+                    <h4 class="mb-0" id="spent-min">4</h4>
+                    <small>minutes</small>
+                  </div>
+                  </div>
+                  <div class="col px-1 px-md-2">
+                  <div class="time">
+                    <h4 class="mb-0" id="spent-s">20</h4>
+                    <small>seconds</small>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- -------- -->
+    <!-- PROGRESS -->
+    <!-- -------- -->
+    <div class="container-fluid padding">
+    <div class="bg-medium rounded mt-3 p-3">
+      <h5>current-progress</h5>
+      <div class="container-fluid bg-dark rounded py-3">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-purp" role="progressbar" id="bar" style="width: 0%"></div>
+        </div>
+        <!-- <button class="btn btn-success" id="btn-progress">Go</button> -->
+      </div>
+      </div>
+      
+    </div>
+    </div>
+
+    <!-- ---- -->
+    <!-- LIST -->
+    <!-- ---- -->
+    <div class="container-fluid padding">
+    <div class="bg-medium rounded mt-3 p-3">
+      <div class="row">
+        <div class="col">
+          <h5>project-list</h5>
+          <ol class="bg-dark rounded py-3 mt-3 px-3" id="l-main">
+            <!-- <li class="list-item"><i class="fa fa-circle-o mr-1"></i> pilihan 1</li>
+            <li class="list-item"><i class="fa fa-circle-o mr-1"></i> pilihan 2</li>
+            <li class="list-item"><i class="fa fa-circle-o mr-1"></i> pilihan 3</li>
+            <li class="list-item"><i class="fa fa-circle-o mr-1"></i> pilihan 4</li> -->
+          </ol>
+        </div>
+
+        <!-- <h1>wow</h1> -->
+      </div>
+    </div>
+    </div>
+
+    <!------------------------>
+    <!-- MODAL TASK MANAGER -->
+    <!------------------------>
+    <div class="modal" id="mdl-taskMgr" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content bg-medium">
+              <div class="modal-header d-block text-center bg-dark">
+                  <h5 class="modal-title">task-manager</h5>
+              </div>
+              <!-- MODAL BODY -->
+              <div class="modal-body p-3">
+                  <div class="container-fluid mb-2 py-2 bg-dark rounded">
+                      <label class="" for="dropdown">select-project: </label>
+                      <select class="dropdown bg-input rounded px-2" name="" id="DDTask">
+                          <option value="" selected disabled>project-list</option>
+                      </select>
+                  </div>
+                  <hr class="my-3">
+                  <div class="container-fluid bg-dark rounded py-3">
+                    <div class="input-group">
+                      <input type="text" id="f-inputTask" class="form-control shadow-none bg-input" placeholder="'Make Timeline', 'Design Template', 'Sebats'">
+                      <div class="input-group-append">
+                        <button class="btn bg-purp text-light shadow-none" id="btn-addTask">add-task</button>
+                      </div>
+                      
+                    </div>
+                  </div>  
+                  <hr class="my-3">
+
+                  <!-- LIST -->
+                  <ol class="list-group l-task">
+                      <!-- <li class="list-group-item">Place Holder
+                          <i onClick="deleteTask(this)" class="btn fa fa-window-close float-right text-danger btn-x"></i>
+                      </li> -->
+                      <div class="placeholder-main">
+                          <!-- <h3 class="text-muted font-italic">Load your project and start adding task!</h3> -->
+                      </div>
+                  </ol>
+              </div>
+              <div class="modal-footer bg-dark">
+                  <button class="btn shadow-none btn-info px-4">load</button>
+                  <button class="btn bg-cancel shadow-none" data-dismiss="modal">cancel</button>
+                  <button class="btn bg-purp shadow-none" id="btn-done" data-dismiss="modal">done</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <!------------------------>
+    <!-- MODAL CREATE PROJECT -->
+    <!------------------------>
+    <div class="modal" id="mdl-createProject" tabindex="-1">
+      <div class="modal-dialog">
+          <!-- Modal Content -->
+          <div class="modal-content bg-medium">
+              <div class="modal-header d-block text-center bg-dark">
+                  <h5 class="modal-title">create-project</h5>
+              </div>
+              <div class="modal-body py-3">
+                  <form class="pb-1">
+                      <label>project-name</label>
+                      <input type="text" class="form-control text-center shadow-none" id="f-projectName" placeholder="your-project-name">
+                  </form>
+              </div>
+              <div class="modal-footer bg-dark">
+                  <button class="btn bg-cancel shadow-none btn-load" data-dismiss="modal">cancel</button>
+                  <button class="btn bg-purp shadow-none" id="btn-saveProject">save</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="js/main.js"></script>
+    
+  </body>
+</html>
