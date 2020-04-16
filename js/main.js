@@ -265,7 +265,7 @@ a.addToTask("Rofl");
 
 
 buttonSaveProject.addEventListener("click", function () {
-	console.log('btn-save');
+	// console.log('btn-save');
 	
 	var projectNameField = document.getElementById("f-projectName");
 	var projectName = document.getElementById("f-projectName").value;
@@ -276,8 +276,9 @@ buttonSaveProject.addEventListener("click", function () {
 	}
 	new Project(projectName);
 	$("#mdl-createProject").modal("hide");
+	projectNameField.value = "";
+	alert('go to task manager to select your task')
 	// selectProject(projectName);
-	// projectNameField.value = "";
 	// RefreshMain();
 });
 
