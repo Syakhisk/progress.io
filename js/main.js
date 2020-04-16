@@ -123,7 +123,7 @@ function RefreshMain() {
 			listMain.innerHTML +=
 				'<button class="text-left list-group-item bg-medium ' +
 				doneSts +
-				'" ondblclick="checkList(this)">' +
+				'" onclick="checkList(this)">' +
 				element +
 				"</button>";
 		}
