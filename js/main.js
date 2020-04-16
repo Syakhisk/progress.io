@@ -277,7 +277,7 @@ buttonSaveProject.addEventListener("click", function () {
 	new Project(projectName);
 	$("#mdl-createProject").modal("hide");
 	projectNameField.value = "";
-	alert('go to task manager to select your task')
+	alert('go to task manager to select your task');
 	// selectProject(projectName);
 	// RefreshMain();
 });
