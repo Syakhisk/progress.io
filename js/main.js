@@ -255,8 +255,8 @@ dropdownTask.addEventListener("change", function () {
 	LoadList();
 });
 
-var a = new Project("Project 1");
-var b = new Project("Project 2");
+var a = new Project("Sample Task 01");
+// var b = new Project("Project 2");
 a.addToTask("Lmao");
 a.addToTask("Lol");
 a.addToTask("Lmfao");
