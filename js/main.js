@@ -83,6 +83,8 @@ function Project(name) {
 
 //Refresh Dropdown
 function RefreshDropdown() {
+	console.log(this + " was called");
+
 	ProjectList.forEach(function (item, index) {
 		var looping = document.querySelector(
 			'option.DDItem[value="' + item.name + '"]'
@@ -101,63 +103,71 @@ function RefreshDropdown() {
 }
 
 function RefreshMain() {
-	listMain.innerHTML = "";
-	var taskDone = selectedProject.findDone("task");
-	var doneSts = "";
+	if (selectedProject) {
+		listMain.innerHTML = "";
+		var taskDone = selectedProject.findDone("task");
+		var doneSts = "";
 
-	for (let i = 0; i < selectedProject.tasks.length; i++) {
-		const element = selectedProject.tasks[i]["taskItem"];
-		//labels for breaking loop
-		loop2:
-		for (let k = 0; k < taskDone.length; k++) {
-			if (element == taskDone[k]) {
-				doneSts = "done";
-				break loop2;
-			} else {
-				doneSts = "";
+		for (let i = 0; i < selectedProject.tasks.length; i++) {
+			const element = selectedProject.tasks[i]["taskItem"];
+			//labels for breaking loop
+			loop2: for (let k = 0; k < taskDone.length; k++) {
+				if (element == taskDone[k]) {
+					doneSts = "done";
+					break loop2;
+				} else {
+					doneSts = "";
+				}
 			}
-		}
-		
-		listMain.innerHTML +=
-			'<button class="text-left list-group-item bg-medium '+doneSts+'" ondblclick="checkList(this)">' +
-			element +
-			"</button>";
-	}
 
-	progressProject = selectedProject.findDone("length");
-  progress.innerText = progressProject + "/" + selectedProject.tasks.length;
-  percentage.innerText = Math.round((100 * progressProject) / selectedProject.tasks.length)+'%';
-  if(progressProject<=0) {
-    percentage.innerText = '0%';
-    runProgress(0);
-  }
-  runProgress(Math.round((100 * progressProject) / selectedProject.tasks.length));
-	console.log(taskDone);
+			listMain.innerHTML +=
+				'<button class="text-left list-group-item bg-medium ' +
+				doneSts +
+				'" ondblclick="checkList(this)">' +
+				element +
+				"</button>";
+		}
+
+		progressProject = selectedProject.findDone("length");
+		progress.innerText = progressProject + "/" + selectedProject.tasks.length;
+		percentage.innerText =
+			Math.round((100 * progressProject) / selectedProject.tasks.length) + "%";
+		if (progressProject <= 0) {
+			percentage.innerText = "0%";
+			runProgress(0);
+		}
+		runProgress(
+			Math.round((100 * progressProject) / selectedProject.tasks.length)
+		);
+		console.log(taskDone);
+	}
 }
 
 function checkList(element) {
 	var name = element.innerText;
-  var tog = element.classList.toggle("done");
-  
+	var tog = element.classList.toggle("done");
 
 	if (tog == true) {
 		selectedProject.update(name, true);
 		progressProject++;
 		progress.innerText = progressProject + "/" + selectedProject.tasks.length;
 		percentage.innerText =
-      Math.round((100 * progressProject) / selectedProject.tasks.length) + "%";
-    runProgress(Math.round((100 * progressProject) / selectedProject.tasks.length));
+			Math.round((100 * progressProject) / selectedProject.tasks.length) + "%";
+		runProgress(
+			Math.round((100 * progressProject) / selectedProject.tasks.length)
+		);
 	} else {
-    selectedProject.update(name, false);
+		selectedProject.update(name, false);
 		progressProject--;
 		progress.innerText = progressProject + "/" + selectedProject.tasks.length;
 		percentage.innerText =
-    Math.round((100 * progressProject) / selectedProject.tasks.length) + "%";
-    runProgress(Math.round((100 * progressProject) / selectedProject.tasks.length));
+			Math.round((100 * progressProject) / selectedProject.tasks.length) + "%";
+		runProgress(
+			Math.round((100 * progressProject) / selectedProject.tasks.length)
+		);
 	}
 	// updateProgress(element, tog);
-  console.log(tog);
-  
+	console.log(tog);
 }
 
 function updateProgress(element, sts) {
@@ -219,6 +229,9 @@ function selectProject(name) {
 /* --------------- Listeners ----------------- */
 
 buttonAddTask.addEventListener("click", function () {
+	if (!selectedProject) {
+		alert('Please select a project from the dropdown list')
+	}
 	var taskName = document.querySelector("#f-inputTask").value;
 	if (taskName == "") {
 		alert("Please fill the field!");
@@ -249,7 +262,11 @@ a.addToTask("Lol");
 a.addToTask("Lmfao");
 a.addToTask("Rofl");
 
+
+
 buttonSaveProject.addEventListener("click", function () {
+	console.log('btn-save');
+	
 	var projectNameField = document.getElementById("f-projectName");
 	var projectName = document.getElementById("f-projectName").value;
 
@@ -274,35 +291,38 @@ input2.addEventListener("keydown", function (event) {
 
 buttonTaskManager.onclick = function () {
 	RefreshDropdown();
+	console.log('taskMgrbtn');
+	
 };
 
 buttonDone.onclick = function () {
-	document.querySelector(".label-selected-project").innerHTML = selectedProject.name;
+	// console.log('taskMgrbtn');
+	if (selectedProject) {
+		document.querySelector(".label-selected-project").innerHTML =
+			selectedProject.name;
+	}
 
-  RefreshMain();
-  
+	RefreshMain();
 };
 
-
-buttonProgress = document.getElementById('btn-progress');
-var bar = document.getElementById('bar');
-
+buttonProgress = document.getElementById("btn-progress");
+var bar = document.getElementById("bar");
 
 function runProgress(value) {
-  // if (bar.style.width == '0%') {
-  //   bar.style.width = '100%';
-  //   console.log(100);
-    
-  // } else {
-  //   bar.style.width = '0%';
-  //   console.log(1);
-    
-  // }
-  bar.style.width = value + '%'
-  
+	// if (bar.style.width == '0%') {
+	//   bar.style.width = '100%';
+	//   console.log(100);
+
+	// } else {
+	//   bar.style.width = '0%';
+	//   console.log(1);
+
+	// }
+	bar.style.width = value + "%";
 }
+
+
 
 // buttonProgress.addEventListener('click', function() {
 //   runProgress(50);
 // });
-

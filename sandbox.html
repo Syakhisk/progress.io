@@ -18,18 +18,33 @@
         background-color: blue;
       }
       .container {
-        background-color: #333;
+        background-color: rgb(71, 71, 71);
+      }
+      .col  {
+        /* background-color: rgb(132, 179, 122); */
+      }
+      .row  {
+        /* background-color: rgb(122, 138, 190); */
       }
     </style>
   </head>
   <body>
 
-    <div class="container">
-      <div class="row red">
-        <div class="col-3 blue">
-          <h1>Tes</h1>
+    <div class="container text-light">
+      <div class="row mt-3">
+        <div class="col">
+          <div class="card bg-dark">
+            <h6 class="card-header bg-dark">navs</h6>
+            <div class="card-body">
+            <div class="row col-lg-6">
+              <button class="col-lg mx-3 my-1 btn btn-success shadow-none" id="btn-taskMgr" data-toggle="modal" data-target="#mdl-taskMgr">task-manager</button>
+              <button class="col-lg mx-3 my-1 btn btn-info shadow-none btn-check" id=>load-project</button>
+              <button class="col-lg mx-3 my-1 btn bg-warning btn-createProject shadow-none" data-toggle="modal" data-target="#mdl-createProject">create-project</button>
+            </div>
+            </div>
+          </div>
         </div>
-      </div>
+        </div>
     </div>
     
     <!-- Optional JavaScript -->

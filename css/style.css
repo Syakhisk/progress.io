@@ -13,19 +13,19 @@ body {
 .bg-purp{
     background-color: rgb(144, 98, 218);
     /* background-color: rgb(195, 67, 97); */
-    
+
     color: white;
 }
 .bg-medium{
     background-color: rgb(92, 95, 102);
     /* background-color: rgb(195, 67, 97); */
-    
+
     color: white;
 }
 .bg-cancel{
     /* background-color: rgb(92, 95, 102); */
     background-color: rgb(195, 67, 97);
-    
+
     /* background-color: rgb(134, 48, 48); */
     color: white;
 }
@@ -40,7 +40,7 @@ body {
     width: 100%;
     padding-top: 5px;
     padding-bottom: 5px;
-    
+
 }
 .text-purp{
     color: rgb(144, 98, 218);
@@ -51,10 +51,12 @@ body {
 
 /* Padding */
 .padding{
-    padding: 0 4rem;
+    padding: 0 10px
     /* box-sizing: border-box; */
 
 }
+
+
 p{
     margin-bottom: 0;
 }
@@ -160,7 +162,7 @@ li.list-item{
     }
   }
 
- 
+
   button.list-group-item{
       width: 100%;
   }

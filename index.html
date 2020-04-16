@@ -29,10 +29,10 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav" style="">
-          <a class="nav-item nav-link" id="btn-taskMgr" data-toggle="modal" data-target="#mdl-taskMgr">task-manager</a>
-          <a class="nav-item nav-link" id="btn-load">load-project</a>
-          <a class="nav-item nav-link" data-toggle="modal" data-target="#mdl-createProject">create-project</a>
+        <div class="navbar-nav">
+          <a class="nav-item nav-link">task-manager</a>
+          <a class="nav-item nav-link" >load-project</a>
+          <a class="nav-item nav-link">create-project</a>
         </div>
         </div>
       </div>
@@ -64,11 +64,12 @@
           <div class="col">
             <div class="card bg-medium">
               <h6 class="card-header bg-dark">navs</h6>
-              <div class="card-body" >
-                <button class="btn btn-success shadow-none" id="btn-taskMgr" data-toggle="modal" data-target="#mdl-taskMgr">task-manager</button>
-                <button class="btn btn-info shadow-none btn-check" id=>load-project</button>
-                <button class="btn bg-purp btn-createProject shadow-none" data-toggle="modal" data-target="#mdl-createProject">create-project</button>
-        
+              <div class="card-body px-2 px-md">
+              <div class="row col-lg mx-0 px-0 buttons">
+                <button class="col-lg mx-xl-5 mx-lg-2 mx-0 my-1 btn btn-success shadow-none" id="btn-taskMgr" data-toggle="modal" data-target="#mdl-taskMgr">task-manager</button>
+                <button class="col-lg mx-xl-5 mx-lg-2 mx-0 my-1 btn bg-purp btn-createProject shadow-none" data-toggle="modal" data-target="#mdl-createProject">create-project</button>
+                <button class="col-lg mx-xl-5 mx-lg-2 mx-0 my-1 btn btn-info shadow-none btn-check" id="btn-load">load-project</button>
+              </div>
               </div>
             </div>
           </div>
@@ -77,7 +78,7 @@
         </div>
         
         <!-- time -->
-        <div class="col-sm">
+        <div class="col-sm mt-3 mt-sm-0">
         <div class="card bg-medium">
           <h6 class="card-header bg-dark">project-time</h6>
           <div class="card-body">
@@ -178,7 +179,7 @@
                   <div class="container-fluid mb-2 py-2 bg-dark rounded">
                       <label class="" for="dropdown">select-project: </label>
                       <select class="dropdown bg-input rounded px-2" name="" id="DDTask">
-                          <option value="" selected disabled>project-list</option>
+                          <option value="" selected disabled>choose-your-project-here</option>
                       </select>
                   </div>
                   <hr class="my-3">
