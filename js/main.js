@@ -273,13 +273,14 @@ buttonSaveProject.addEventListener("click", function () {
 	if (projectName == "") {
 		alert("Please fill the project name field!");
 		return;
+	} else {
+		new Project(projectName);
+		$("#mdl-createProject").modal("hide");
+		projectNameField.value = "";
+		alert('go to task manager to select your task');
+		// selectProject(projectName);
+		// RefreshMain();
 	}
-	new Project(projectName);
-	$("#mdl-createProject").modal("hide");
-	projectNameField.value = "";
-	alert('go to task manager to select your task');
-	// selectProject(projectName);
-	// RefreshMain();
 });
 
 var input2 = document.getElementById("f-projectName");
@@ -301,6 +302,9 @@ buttonDone.onclick = function () {
 	if (selectedProject) {
 		document.querySelector(".label-selected-project").innerHTML =
 			selectedProject.name;
+			alert('you have selected a project, proceed to add task below')
+	} else {
+		alert('select a project from the dropdown list')
 	}
 
 	RefreshMain();
